@@ -2,31 +2,17 @@
 
 ## Overview
 
-This project is a web-based project for a fintech bank, its will include different types of account eg; `savings`, `investments`, and `loans`. The whole process involved in a bank will be carried out here including transaction of funds, etc.
+This project is a web-based project for a fintech bank, its will include different types of account eg; `savings`, `investments`, and `loans`. The whole process involved in a bank will be carried out here including transaction of funds, investments, etc.
 
 ## Technologies Used
 
 - **React JS**: Frontend.
 - **Firebase**: Authentication and Database.
 - **FontAwesome**: UI Icons.
-- **Bootstrap**: Responsive Layouts.
+- **Animate.Style**: Animated Concepts.
 - **CSS**: Custom styling.
+- **EmailJS**: Seamless Email Notification without Backend.
 
-
-## Completed components
-
-- GetUser: to display authenticated user on default route
-- SideBar: to display the menu item eg. balance for pc view
-- GetAuth: to handle authentication ie login and registration
-- Loader: to create a loading animation for aesthetics
-- MobileNav: to display quick navigation for mobile
-- user/Deposit: to handle deposit with account number
-- user/Investment: to display investment plans and deposit with crypto
-- user/MyCard: handles application of card and provides application number
-- user/Loans: displays loan requirements
-- user/Transaction: displays the transaction history
-- user/Transfer: handles the transfer form
-- user/UserInfo: serves as the user profile
 
 ## Features
 
@@ -44,6 +30,15 @@ This project is a web-based project for a fintech bank, its will include differe
    - Investment Offer.
    - Loan Offers.
 
+## Logic for Trade and Withdrawal
+- The Trade starts by filling the form, this takes out the amount, and matches it with a corresponding plan. If the entered amount is 100 for a Basic plan with 10% profit in 24 hours, the calculation and expected profit is `(100 x 10%) x 24` then the result is added to the capital ie `240 + 100 = 340`.
+- There is a credit for the profit with a pending description.
+- The user role also automatically changes to investor.
+- The trade option is not available for admin for security reasons, and for investor it shows that the trading is in progress.
+- While the trading is in progress, it displays the pending transaction which has a date and an end date. If the end date is greater or equal to today's that then there is a claim profit button, else there is a text signifying that the trade is still in progress.
+- The button to claim profit will edit the transaction and assign it to Investments from Trading, and restore the user back to their role as user.
+- The Withdrawal is only available for balances based on `account: Investments`.
+
 ## Getting Started
 
 ### Prerequisites
@@ -54,7 +49,7 @@ This project is a web-based project for a fintech bank, its will include differe
 
 - Start project `npm start`
 
-### Usage
+### Usage of Template
 - Login: Enter your email and password to log in. Only admin users have access to the full admin panel.
 
 - Transaction: Transactions will be carried out by users.
@@ -64,7 +59,12 @@ This project is a web-based project for a fintech bank, its will include differe
 - Add firebase information to connect to your project.
 - Edit user information and transactions.
 
-## Future Upgrades
-- Different Currencies.
-- User Investment Plan System
-- Upgrading to Blaze Plan to deploy functions for proper admin usage.
+
+## Important
+
+- By Default, Newly Registered users will have role as `user` and group as `cancelled`. Cancelled can not make transfer, Deactivated will make pending transfers, and Activated will be complete.
+
+- When a User makes a withdrawal; `deactivated` means pending but group will change to `cancelled` which means do not allow. `activated` will go completed.
+
+- During a trade; `Admins` will not be allowed to trade for security reasons, `Investor` means that a trade is currently ongoing, while `User` can carry out activities. If a user makes a  trade, onsubmit their role changes to investor signifying that their trade has not ended. When ended, the investor now clicks on the claim button which completes the transaction, sends the email, and returns the investor to user.
+
