@@ -31,12 +31,12 @@ This project is a web-based project for a fintech bank, its will include differe
    - Loan Offers.
 
 ## Logic for Trade and Withdrawal
-- The Trade starts by filling the form, this takes out the amount, and matches it with a corresponding plan. If the entered amount is 100 for a Basic plan with 10% profit in 24 hours, the calculation and expected profit is `(100 x 10%) x 24` then the result is added to the capital ie `240 + 100 = 340`.
+- The Trade starts by filling the form, this takes out the amount, and matches it with a corresponding plan. If the entered amount is 500 for a Basic plan with 75% efficiency in 3 Days and 250 maxTps, the calculation and expected profit is `(500 x 75% x 250) / 6` then the result is  `15,625`.
 - There is a credit for the profit with a pending description.
 - The user role also automatically changes to investor.
 - The trade option is not available for admin for security reasons, and for investor it shows that the trading is in progress.
-- While the trading is in progress, it displays the pending transaction which has a date and an end date. If the end date is greater or equal to today's that then there is a claim profit button, else there is a text signifying that the trade is still in progress.
-- The button to claim profit will edit the transaction and assign it to Investments from Trading, and restore the user back to their role as user.
+- While the trading is in progress, it displays the pending transaction which has a date and an end date. There is a spread of daily profit, and if the today's date matches the closest claim date, then there is a claim button.
+- The button to claim profit will edit the transaction and assign it to Investments from Trading, and restore the user back to their role as use, but after the last schedule transaction has been claimed.
 - The Withdrawal is only available for balances based on `account: Investments`.
 
 ## Getting Started
@@ -64,7 +64,7 @@ This project is a web-based project for a fintech bank, its will include differe
 
 - By Default, Newly Registered users will have role as `user` and group as `cancelled`. Cancelled can not make transfer, Deactivated will make pending transfers, and Activated will be complete.
 
-- When a User makes a withdrawal; `deactivated` means pending but group will change to `cancelled` which means do not allow. `activated` will go completed.
+- When a User makes a withdrawal; `deactivated` means pending but group will change to `cancelled` which means do not allow. `activated` will go completed. `deactivated` on investments means that the user needs to verify to gain access.
 
 - During a trade; `Admins` will not be allowed to trade for security reasons, `Investor` means that a trade is currently ongoing, while `User` can carry out activities. If a user makes a  trade, onsubmit their role changes to investor signifying that their trade has not ended. When ended, the investor now clicks on the claim button which completes the transaction, sends the email, and returns the investor to user.
 
