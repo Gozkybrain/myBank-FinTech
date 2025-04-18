@@ -60,6 +60,7 @@ This project is a web-based project for a fintech bank, its will include differe
 - Edit user information and transactions.
 
 
+
 ## Important
 
 - By Default, Newly Registered users will have role as `user` and group as `cancelled`. Cancelled can not make transfer, Deactivated will make pending transfers, and Activated will be complete.
