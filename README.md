@@ -41,13 +41,6 @@ This project is a web-based project for a fintech bank, its will include differe
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js
-
-- Install all dependencies `npm install`
-
-- Start project `npm start`
 
 ### Usage of Template
 - Login: Enter your email and password to log in. Only admin users have access to the full admin panel.
