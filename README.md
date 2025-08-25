@@ -1,8 +1,8 @@
-# Fintech Bank Application
+# Super Fintech Application Template
 
 ## Overview
 
-This project is a web-based project for a fintech bank, its will include different types of account eg; `savings`, `investments`, and `loans`. The whole process involved in a bank will be carried out here including transaction of funds, investments, etc.
+This project is a web-based project for a fintech bank, its will include different types of account eg; `savings`, `investments`, and `loans`. The whole process involved in a bank will be carried out here including `transaction of funds`, `investments`, `card application`, `loan application`, `escrow services` etc.
 
 ## Technologies Used
 
@@ -41,7 +41,6 @@ This project is a web-based project for a fintech bank, its will include differe
 
 ## Getting Started
 
-
 ### Usage of Template
 - Login: Enter your email and password to log in. Only admin users have access to the full admin panel.
 
@@ -53,12 +52,23 @@ This project is a web-based project for a fintech bank, its will include differe
 - Edit user information and transactions.
 
 
-
 ## Important
 
 - By Default, Newly Registered users will have role as `user` and group as `cancelled`. Cancelled can not make transfer, Deactivated will make pending transfers, and Activated will be complete.
 
 - When a User makes a withdrawal; `deactivated` means pending but group will change to `cancelled` which means do not allow. `activated` will go completed. `deactivated` on investments means that the user needs to verify to gain access.
 
+- Cancelled accounts can not carry out withdrawal, even if they use the special plans.
+
+- If user role is `user` and group is `activated`, then withdrawal can go through. If the group is `deactivated` then a report message shows an=nd asks them to verify with code, while role is `investor` states that the trade is still going on. Check `Withdraw.jsx` for more context.
+
 - During a trade; `Admins` will not be allowed to trade for security reasons, `Investor` means that a trade is currently ongoing, while `User` can carry out activities. If a user makes a  trade, onsubmit their role changes to investor signifying that their trade has not ended. When ended, the investor now clicks on the claim button which completes the transaction, sends the email, and returns the investor to user.
 
+- Promo Plan can only be seen by users that are investors so a button has to first turn them to investors, then ask them to start the trade.
+
+## 🔒 Private Project Notice  
+
+This project is private and not publicly accessible.  
+If you would like to preview it, please contact me on [Twitter](https://twitter.com/gozkybrain4u).  
+
+Once verified, you can get access to a demo link and test login details for review.  
