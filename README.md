@@ -14,7 +14,7 @@ This project is a web-based project for a fintech bank, its will include differe
 - **EmailJS**: Seamless Email Notification without Backend.
 
 
-## Features
+## Features of the system
 
 1. **User Authentication**:
    - Login functionality using Firebase Authentication.
