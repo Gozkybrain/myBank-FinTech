@@ -66,7 +66,7 @@ This project is a web-based project for a fintech bank, its will include differe
 
 - Promo Plan can only be seen by users that are investors so a button has to first turn them to investors, then ask them to start the trade.
 
-## 🔒 Private Project Notice  
+## Private Project Notice  
 
 This project is private and not publicly accessible.  
 If you would like to preview it, please contact me on [Twitter](https://twitter.com/gozkybrain4u).  
