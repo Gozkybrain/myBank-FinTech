@@ -72,3 +72,5 @@ This project is private and not publicly accessible.
 If you would like to preview it, please contact me on [Twitter](https://twitter.com/gozkybrain4u).  
 
 Once verified, you can get access to a demo link and test login details for review.  
+
+This project is currently u der review to be rewritten in NextJS for newer updates based on client request.
